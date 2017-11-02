@@ -1,0 +1,57 @@
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc.vim', { 'build' : { 'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak','mac' : 'make','linux' : 'make','unix' : 'gmake', }, }
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'ngmy/vim-rubocop'
+NeoBundle 'terryma/vim-multiple-cursors'
+" Ruby向けにendを自動挿入してくれる
+NeoBundle 'tpope/vim-endwise'
+" コメントON/OFFを手軽に実行
+NeoBundle 'tomtom/tcomment_vim'
+" インデントに色を付けて見やすくする
+" NeoBundle 'nathanaelkane/vim-indent-guides'
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+
+" =================
+" カラースキーマ
+" =================
+" solarized カラースキーム
+  NeoBundle 'altercation/vim-colors-solarized'
+" mustang カラースキーム
+  NeoBundle 'croaker/mustang-vim'
+" wombat カラースキーム
+  NeoBundle 'jeffreyiacono/vim-colors-wombat'
+" jellybeans カラースキーム
+  NeoBundle 'nanotech/jellybeans.vim'
+" lucius カラースキーム
+  NeoBundle 'vim-scripts/Lucius'
+" zenburn カラースキーム
+  NeoBundle 'vim-scripts/Zenburn'
+" mrkn256 カラースキーム
+  NeoBundle 'mrkn/mrkn256.vim'
+" railscasts カラースキーム
+  NeoBundle 'jpo/vim-railscasts-theme'
+" pyte カラースキーム
+  NeoBundle 'therubymug/vim-pyte'
+" molokai カラースキーム
+  NeoBundle 'tomasr/molokai'
+
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+NeoBundleCheck

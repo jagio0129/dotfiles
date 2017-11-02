@@ -1,0 +1,29 @@
+filetype off
+filetype plugin indent off
+
+
+syntax on
+colorscheme molokai
+set t_Co=256
+set nobackup
+set encoding=utf-8
+set fileencoding=utf-8
+set number
+set autoindent
+set ignorecase
+set incsearch
+set title
+set tabstop=4
+set wrapscan
+set ruler
+set showmode
+set showmatch
+" バックスペースキーの有効化
+set backspace=indent,eol,start
+
+" 左右のカーソル移動で行間移動可能にする。
+set whichwrap=b,s,<,>,[,]
+
+" カーソルラインをハイライト
+set cursorline
+filetype plugin indent on
