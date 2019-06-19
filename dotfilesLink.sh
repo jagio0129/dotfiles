@@ -6,6 +6,8 @@ cat .gitconfig >> ~/.gitconfig
 
 echo 'alias be="bundle exec"' >> ~/.bashrc
 echo 'alias dc="docker-compse"' >> ~/.bashrc
+
+# プロンプトに色付け
 echo "export PS1='\[\e[0;35m\][\h@\w]\$\[\e[0;0m\]'" >> ~/.bashrc
 
 # clone ruby_style_guide
@@ -17,8 +19,8 @@ if [ ! -d $RUBY_STYLE_GUILDE ]; then
 fi
 
 # for mac
-TERMINAL_NOTIFIER=`brew list | grep terminal-notifier`
 if [ "$(uname)" == 'Darwin' ]; then
+  TERMINAL_NOTIFIER=`brew list | grep terminal-notifier`
   if [ ! $TERMINAL_NOTIFIER == 'terminal-notifier' ]; then
     brew install terminal-notifier
   fi
