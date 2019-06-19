@@ -17,8 +17,11 @@ if [ ! -d $RUBY_STYLE_GUILDE ]; then
 fi
 
 # for mac
+TERMINAL_NOTIFIER=`brew list | grep terminal-notifier`
 if [ "$(uname)" == 'Darwin' ]; then
-  brew install terminal-notifier &&
+  if [ ! $TERMINAL_NOTIFIER == 'terminal-notifier' ]; then
+    brew install terminal-notifier
+  fi
   echo "alias noti='terminal-notifier -message 'コマンド完了''" >> ~/.bashrc
 fi
 
