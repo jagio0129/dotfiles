@@ -10,7 +10,7 @@ echo "export PS1='\[\e[0;35m\][\h@\w]\$\[\e[0;0m\]'" >> ~/.bashrc
 
 # for mac
 if [ "$(uname)" == 'Darwin' ]; then
-  brew install terminal-notifier
+  brew install terminal-notifier &&
   echo "alias noti='terminal-notifier -message 'コマンド完了''" >> ~/.bashrc
 fi
 
