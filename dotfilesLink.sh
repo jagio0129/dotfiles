@@ -28,6 +28,8 @@ if [ "$(uname)" == 'Darwin' ]; then
 fi
 
 # tmux auto start when login
+cat <<-EOF >> ~/.bashrc
+
 SESSION_NAME=ope
 if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   option=""
@@ -38,3 +40,4 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   fi
   tmux $option && exit
 fi
+EOF
