@@ -8,6 +8,9 @@ cat .gitconfig >> ~/.gitconfig
 
 ### bashrc
 BASHRC=~/.bashrc
+echo 'alias ll="ls -la"'
+echo 'alias ll="ls -la"' >> $BASHRC
+
 echo 'alias be="bundle exec"'
 echo 'alias be="bundle exec"' >> $BASHRC
 
@@ -29,6 +32,14 @@ echo 'export RUBY_STYLE_GUILDE=~/ruby_style_guide' >> $BASHRC
 
 # for mac
 if [ "$(uname)" == 'Darwin' ]; then
+  touch ~/.bash_profile
+  cat <<-EOF >> ~/.bash_profile
+if [ -f ~/.bashrc ] ; then
+  . ~/.bashrc
+fi
+EOF
+
+  # terminal-notifier
   TERMINAL_NOTIFIER=`brew list | grep terminal-notifier`
   if [ ! $TERMINAL_NOTIFIER == 'terminal-notifier' ]; then
     brew install terminal-notifier
