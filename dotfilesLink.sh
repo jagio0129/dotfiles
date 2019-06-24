@@ -24,8 +24,8 @@ if [ ! -d $RUBY_STYLE_GUILDE ]; then
   mkdir $RUBY_STYLE_GUILDE
   git clone git@github.com:jagio0129/ruby_style_guide.git $RUBY_STYLE_GUILDE ;
 fi
-echo 'export $RUBY_STYLE_GUILDE=~/ruby_style_guide'
-echo 'export $RUBY_STYLE_GUILDE=~/ruby_style_guide' >> $BASHRC
+echo 'export RUBY_STYLE_GUILDE=~/ruby_style_guide'
+echo 'export RUBY_STYLE_GUILDE=~/ruby_style_guide' >> $BASHRC
 
 # for mac
 if [ "$(uname)" == 'Darwin' ]; then
