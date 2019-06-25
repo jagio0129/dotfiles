@@ -42,10 +42,18 @@ EOF
   # terminal-notifier
   TERMINAL_NOTIFIER=`brew list | grep terminal-notifier`
   if [ ! $TERMINAL_NOTIFIER == 'terminal-notifier' ]; then
-    brew install terminal-notifier
+    brew install terminal-notifier;
+	echo "installed terminal-notifier"
   fi
   echo "alias noti='terminal-notifier -message 'コマンド完了''"
   echo "alias noti='terminal-notifier -message 'コマンド完了''" >> $BASHRC
+
+  # tmux
+  TMUX=`brew list | grep tmux`
+  if [ ! $TERMINAL_NOTIFIER == 'tmux' ]; then
+    brew install tmux
+	echo "installed tmux";
+  fi
 fi
 
 # tmux auto start when login
