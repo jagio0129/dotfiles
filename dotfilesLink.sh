@@ -8,6 +8,10 @@ cat .gitconfig >> ~/.gitconfig
 
 ### bashrc
 BASHRC=~/.bashrc
+
+echo '##### my bash config #####"
+cat '##### my bash config #####" >> $BASHRC
+
 echo 'alias ll="ls -la"'
 echo 'alias ll="ls -la"' >> $BASHRC
 
@@ -57,7 +61,7 @@ EOF
 fi
 
 # tmux auto start when login
-cat <<-EOF >> ~/.bashrc
+cat <<-'EOS' >> ~/.bashrc
 
 SESSION_NAME=ope
 if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
@@ -69,4 +73,4 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   fi
   tmux $option && exit
 fi
-EOF
+EOS
