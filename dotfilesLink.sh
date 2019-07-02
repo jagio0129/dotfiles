@@ -71,6 +71,6 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   else
     option="new -s ${SESSION_NAME}"
   fi
-  tmux -2 $option &&
+  tmux -2 $option
 fi
 EOS
