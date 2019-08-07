@@ -9,8 +9,8 @@ cat .gitconfig >> ~/.gitconfig
 ### bashrc
 BASHRC=~/.bashrc
 
-echo '##### my bash config #####"
-cat '##### my bash config #####" >> $BASHRC
+echo '##### my bash config #####'
+cat '##### my bash config #####' >> $BASHRC
 
 echo 'alias ll="ls -la"'
 echo 'alias ll="ls -la"' >> $BASHRC
@@ -21,9 +21,13 @@ echo 'alias be="bundle exec"' >> $BASHRC
 echo 'alias dc="docker-compse"'
 echo 'alias dc="docker-compse"' >> $BASHRC
 
+# show git branch in prompt
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh >> ~/.git-prompt.sh
+source ~/.git-prompt.sh
+
 # プロンプトに色付け
-echo "export PS1='\[\e[0;35m\][\h@\w]\$\[\e[0;0m\]'"
-echo "export PS1='\[\e[0;35m\][\h@\w]\$\[\e[0;0m\]'" >> $BASHRC
+echo "export PS1='\[\e[0;35m\][\u@\h \W]\[\e[0;36m\]$(__git_ps1 " (%s)")\n\[\e[0;35m\]\$ \[\e[0;0m\]'"
+echo "export PS1='\[\e[0;35m\][\u@\h \W]\[\e[0;36m\]$(__git_ps1 " (%s)")\n\[\e[0;35m\]\$ \[\e[0;0m\]'" >> $BASHRC
 
 # clone ruby_style_guide
 RUBY_STYLE_GUILDE=~/ruby_style_guide
