@@ -38,6 +38,9 @@ fi
 echo 'export RUBY_STYLE_GUILDE=~/ruby_style_guide'
 echo 'export RUBY_STYLE_GUILDE=~/ruby_style_guide' >> $BASHRC
 
+# rspec bulk start
+echo 'alias bulk_rspec="bundle exec ruby ~/dotfiles/bulk_rspec.rb"' >> $BASHRC
+
 # for mac
 if [ "$(uname)" == 'Darwin' ]; then
   touch ~/.bash_profile
